@@ -91,14 +91,6 @@ function createPost($request_values)
 		if (empty($title)) { array_push($errors, "Post title is required"); }
 		if (empty($body)) { array_push($errors, "Post body is required"); }
 		if (empty($topic_id)) { array_push($errors, "Post topic is required"); }
-		// Get image name
-	  	$featured_image = $_FILES['featured_image']['name'];
-	  	if (empty($featured_image)) { array_push($errors, "Featured image is required"); }
-	  	// image file directory
-	  	$target = "../static/images/" . basename($featured_image);
-	  	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
-	  		array_push($errors, "Failed to upload image. Please check file settings for your server");
-	  	}
 		// Ensure that no post is saved twice. 
 		$post_check_query = "SELECT * FROM posts WHERE slug='$post_slug' LIMIT 1";
 		$result = mysqli_query($conn, $post_check_query);
@@ -108,7 +100,7 @@ function createPost($request_values)
 		}
 		// create post if there are no errors in the form
 		if (count($errors) == 0) {
-			$query = "INSERT INTO posts (user_id, title, slug, image, body, published, created_at, updated_at) VALUES(1, '$title', '$post_slug', '$featured_image', '$body', $published, now(), now())";
+			$query = "INSERT INTO posts (user_id, title, slug, body, published, created_at, updated_at) VALUES(1, '$title', '$post_slug', '$body', $published, now(), now())";
 			if(mysqli_query($conn, $query)){ // if post created successfully
 				$inserted_post_id = mysqli_insert_id($conn);
 				// create relationship between post and topic

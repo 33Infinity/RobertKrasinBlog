@@ -139,7 +139,7 @@ form input:focus {
   background-image: url("../images/banner.jpg");
   background-size: 100% 100%;
 }
-.banner .welcome_msg {
+.welcome_msg {
   width: 45%;
   float: left;
   padding: 20px;
@@ -158,7 +158,7 @@ form input:focus {
 }
 .banner .welcome_msg p span {
   font-size: 0.81em;
-  color: #3e606f;
+  color: #b9e6f2;
 }
 .banner .welcome_msg a {
   width: 30%;

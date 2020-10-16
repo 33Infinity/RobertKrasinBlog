@@ -24,7 +24,6 @@
 		<div class="content flex-child">
 			<h2 class="content-title">Recent Articles</h2>
 			<hr>
-			<hr>
 			<!-- more content still to come here ... -->
 
 			<?php foreach ($posts as $post): ?>
