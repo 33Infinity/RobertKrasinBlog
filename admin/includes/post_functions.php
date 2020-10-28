@@ -26,12 +26,11 @@ function getAllPosts()
 		$sql = "SELECT * FROM posts WHERE user_id=$user_id";
 	}
 	$result = mysqli_query($conn, $sql);
-	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 	$final_posts = array();
-	foreach ($posts as $post) {
-		$post['author'] = getPostAuthorById($post['user_id']);
-		array_push($final_posts, $post);
+	for($i=0;$i<mysqli_num_rows($result);$i++){
+		$row = mysqli_fetch_array($result);
+		$row['author'] = getPostAuthorById($row['user_id']);
+		array_push($final_posts, $row);
 	}
 	return $final_posts;
 }
@@ -42,8 +41,7 @@ function getPostAuthorById($user_id)
 	$sql = "SELECT username FROM users WHERE id=$user_id";
 	$result = mysqli_query($conn, $sql);
 	if ($result) {
-		// return username
-		return mysqli_fetch_assoc($result)['username'];
+		return mysqli_fetch_array($result)['username'];
 	} else {
 		return null;
 	}
@@ -124,7 +122,7 @@ function createPost($request_values)
 		global $conn, $title, $post_slug, $body, $published, $isEditingPost, $post_id;
 		$sql = "SELECT * FROM posts WHERE id=$role_id LIMIT 1";
 		$result = mysqli_query($conn, $sql);
-		$post = mysqli_fetch_assoc($result);
+		$post = mysqli_fetch_array($result);
 		// set form values on the form to be updated
 		$title = $post['title'];
 		$body = $post['body'];

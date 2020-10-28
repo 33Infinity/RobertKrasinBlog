@@ -1,6 +1,13 @@
 <?php  include('config.php'); ?>
-<?php  include('includes/public_functions.php'); ?>
-<?php include('includes/head_section.php'); ?>
+<?php  include('./includes/public_functions.php'); ?>
+<?php include('./includes/head_section.php'); ?>
+<?php 
+	// Get posts under a particular topic
+	if (isset($_GET['post'])) {
+		$post_id = $_GET['post'];
+		$post = getPost($post_id);
+	}
+?>
 <title> <?php echo $post['title'] ?> | Robert Krasin's Blog</title>
 </head>
 <body>
@@ -23,12 +30,7 @@
 				</div>
 			<?php endif ?>
 			</div>
-			<!-- // full post div -->
-			
-			<!-- comments section -->
-			<!--  coming soon ...  -->
 		</div>
-		<!-- // Page wrapper -->
 	</div>
 </div>
 <!-- // content -->

@@ -88,7 +88,7 @@ function createAdmin($request_values){
 	$user_check_query = "SELECT * FROM users WHERE username='$username' 
 							OR email='$email' LIMIT 1";
 	$result = mysqli_query($conn, $user_check_query);
-	$user = mysqli_fetch_assoc($result);
+	$user = mysqli_fetch_array($result);
 	if ($user) { // if user exists
 		if ($user['username'] === $username) {
 		  array_push($errors, "Username already exists");
@@ -121,7 +121,7 @@ function editAdmin($admin_id)
 
 	$sql = "SELECT * FROM users WHERE id=$admin_id LIMIT 1";
 	$result = mysqli_query($conn, $sql);
-	$admin = mysqli_fetch_assoc($result);
+	$admin = mysqli_fetch_array($result);
 
 	// set form values ($username and $email) on the form to be updated
 	$username = $admin['username'];
@@ -181,8 +181,12 @@ function getAllTopics() {
 	global $conn;
 	$sql = "SELECT * FROM topics";
 	$result = mysqli_query($conn, $sql);
-	$topics = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	return $topics;
+	$final_topics = array();
+	for($i=0;$i<mysqli_num_rows($result);$i++){
+		$row = mysqli_fetch_array($result);
+		array_push($final_topics, $row);
+	}
+	return $final_topics;
 }
 function createTopic($request_values){
 	global $conn, $errors, $topic_name;
@@ -203,7 +207,7 @@ function createTopic($request_values){
 	if (count($errors) == 0) {
 		$query = "select max(id)+1 as next_id from topics";
 		$result = mysqli_query($conn, $query);
-		$topic = mysqli_fetch_assoc($result);
+		$topic = mysqli_fetch_array($result);
 	// set form values ($topic_name) on the form to be updated
 		$topic_id = $topic['next_id'];
 		$query = "INSERT INTO topics (id, name, slug) 
@@ -223,7 +227,7 @@ function editTopic($topic_id) {
 	global $conn, $topic_name, $isEditingTopic, $topic_id;
 	$sql = "SELECT * FROM topics WHERE id=$topic_id LIMIT 1";
 	$result = mysqli_query($conn, $sql);
-	$topic = mysqli_fetch_assoc($result);
+	$topic = mysqli_fetch_array($result);
 	// set form values ($topic_name) on the form to be updated
 	$topic_name = $topic['name'];
 }
@@ -270,8 +274,11 @@ function getAdminUsers(){
 	global $conn, $roles;
 	$sql = "SELECT * FROM users WHERE role IS NOT NULL";
 	$result = mysqli_query($conn, $sql);
-	$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+	$users = array();
+	for($i=0;$i<mysqli_num_rows($result);$i++){
+		$row = mysqli_fetch_array($result);
+		array_push($users, $row);
+	}
 	return $users;
 }
 /* * * * * * * * * * * * * * * * * * * * *

@@ -6,7 +6,7 @@
 <body>
 	<div class="header">
 		<div class="logo">
-			<a href="<?php echo BASE_URL .'admin/dashboard.php' ?>">
+			<a href="<?php echo BASE_URL .'/admin/dashboard.php' ?>">
 				<h1>Robert Krasin's Blog - Admin</h1>
 			</a>
 		</div>
@@ -19,24 +19,10 @@
 	</div>
 	<div class="container dashboard">
 		<h1>Welcome</h1>
-		<div class="stats">
-			<a href="users.php" class="first">
-				<span>43</span> <br>
-				<span>Newly registered users</span>
-			</a>
-			<a href="posts.php">
-				<span>43</span> <br>
-				<span>Published posts</span>
-			</a>
-			<a>
-				<span>43</span> <br>
-				<span>Published comments</span>
-			</a>
-		</div>
 		<br><br><br>
 		<div class="buttons">
-			<a href="users.php">Add Users</a>
-			<a href="posts.php">Add Posts</a>
+			<a href="users.php">Manage Users</a>
+			<a href="posts.php">Manage Posts</a>
 		</div>
 	</div>
 </body>

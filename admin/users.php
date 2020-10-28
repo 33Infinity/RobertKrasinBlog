@@ -18,7 +18,7 @@
 		<div class="action">
 			<h1 class="page-title">Create/Edit Admin User</h1>
 
-			<form method="post" action="<?php echo BASE_URL . 'admin/users.php'; ?>" >
+			<form method="post" action="<?php echo BASE_URL . '/admin/users.php'; ?>" >
 
 				<!-- validation errors for the form -->
 				<?php include(ROOT_PATH . '/includes/errors.php') ?>

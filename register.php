@@ -1,8 +1,8 @@
 <?php  include('config.php'); ?>
 <!-- Source code for handling registration and login -->
-<?php  include('includes/registration_login.php'); ?>
+<?php  include('./includes/registration_login.php'); ?>
 
-<?php include('includes/head_section.php'); ?>
+<?php include('./includes/head_section.php'); ?>
 
 <title>Robert Krasin's Blog | Sign up </title>
 </head>

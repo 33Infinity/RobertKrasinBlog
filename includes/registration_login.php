@@ -24,7 +24,7 @@
 								OR email='$email' LIMIT 1";
 
 		$result = mysqli_query($conn, $user_check_query);
-		$user = mysqli_fetch_assoc($result);
+		$user = mysqli_fetch_array($result);
 
 		if ($user) { // if user exists
 			if ($user['username'] === $username) {
@@ -51,7 +51,7 @@
 			if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
 				$_SESSION['message'] = "You are now logged in";
 				// redirect to admin area
-				header('location: ' . BASE_URL . 'admin/dashboard.php');
+				header('location: ' . BASE_URL . '/admin/dashboard.php');
 				exit(0);
 			} else {
 				$_SESSION['message'] = "You are now logged in";
@@ -76,7 +76,7 @@
 			$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result) > 0) {
 				// get id of created user
-				$reg_user_id = mysqli_fetch_assoc($result)['id']; 
+				$reg_user_id = mysqli_fetch_array($result)['id']; 
 
 				// put logged in user into session array
 				$_SESSION['user'] = getUserById($reg_user_id); 
@@ -116,7 +116,7 @@
 		$sql = "SELECT * FROM users WHERE id=$id LIMIT 1";
 
 		$result = mysqli_query($conn, $sql);
-		$user = mysqli_fetch_assoc($result);
+		$user = mysqli_fetch_array($result);
 
 		// returns user in an array format: 
 		// ['id'=>1 'username' => '', 'email'=>'a@a.com', 'password'=> 'mypass']

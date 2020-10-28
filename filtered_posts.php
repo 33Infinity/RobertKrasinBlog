@@ -1,6 +1,6 @@
 <?php include('config.php'); ?>
-<?php include('includes/public_functions.php'); ?>
-<?php include('includes/head_section.php'); ?>
+<?php include('./includes/public_functions.php'); ?>
+<?php include('./includes/head_section.php'); ?>
 <?php 
 	// Get posts under a particular topic
 	if (isset($_GET['topic'])) {
@@ -23,8 +23,7 @@
 	<hr>
 	<?php foreach ($posts as $post): ?>
 		<div class="post" style="margin-left: 0px;">
-			<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="">
-			<a href="single_post.php?post-slug=<?php echo $post['slug']; ?>">
+			<a href="single_post.php?post=<?php echo $post['id']; ?>">
 				<div class="post_info">
 					<h3><?php echo $post['title'] ?></h3>
 					<div class="info">
