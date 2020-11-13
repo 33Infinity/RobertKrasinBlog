@@ -203,8 +203,7 @@ function createPost($request_values)
 	function togglePublishPost($post_id, $message)
 	{
 		global $conn;
-		$sql = "UPDATE posts SET published=!published WHERE id=$post_id";
-		
+		$sql = "UPDATE posts SET published=IF(published=1, 0, 1) WHERE id=$post_id";
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION['message'] = $message;
 			header("location: posts.php");
