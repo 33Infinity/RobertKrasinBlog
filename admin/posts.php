@@ -27,7 +27,6 @@
 						<thead>
 						<th>N</th>
 						<th>Title</th>
-						<th>Author</th>
 						<th>Views</th>
 						<!-- Only Admin can publish/unpublish post -->
 						<?php if ($_SESSION['user']['role'] == "Admin"): ?>
@@ -40,7 +39,6 @@
 					<?php foreach ($posts as $key => $post): ?>
 						<tr>
 							<td><?php echo $key + 1; ?></td>
-							<td><?php echo $post['author']; ?></td>
 							<td>
 								<a 	target="_blank"
 								href="<?php echo BASE_URL . '/single_post.php?post-slug=' . $post['slug'] ?>">
