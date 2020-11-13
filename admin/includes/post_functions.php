@@ -88,7 +88,7 @@ function createPost($request_values)
 		// validate form
 		if (empty($title)) { array_push($errors, "Post title is required"); }
 		if (empty($body)) { array_push($errors, "Post body is required"); }
-		if (empty($topic_id)) { array_push($errors, "Post topic is required"); }
+		if (strlen($topic_id)==0) { array_push($errors, "Post topic is required"); }
 		// Ensure that no post is saved twice. 
 		$post_check_query = "SELECT * FROM posts WHERE slug='$post_slug' LIMIT 1";
 		$result = mysqli_query($conn, $post_check_query);
