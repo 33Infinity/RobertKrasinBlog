@@ -276,6 +276,12 @@ form input:focus {
   bottom: 5px;
 }
 
+.info {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
 /* * * * * * * * *
 * SINGLE PAGE 
 * * * * * * * * */

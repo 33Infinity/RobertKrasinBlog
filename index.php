@@ -32,14 +32,14 @@
 							class="btn category">
 							<?php echo $post['topic']['name'] ?>
 						</a>
+						<div class="info">
+							<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
+						</div>
 					<?php endif ?>
 
 					<a href="single_post.php?post=<?php echo $post['id']; ?>">
 						<div class="post_info">
 							<h3><?php echo $post['title'] ?></h3>
-							<div class="info">
-								<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-							</div>
 						</div>
 					</a>
 				</div>
