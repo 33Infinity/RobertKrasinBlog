@@ -3,7 +3,7 @@
 <?php require_once( ROOT_PATH . '/includes/registration_login.php') ?>
 <?php $topics = getAllTopics();?>
 <?php require_once( ROOT_PATH . '/includes/head_section.php') ?>
-	<title>Robert Krasin's Blog | Home </title>
+	<title>Robert Krasin's Blog | Topics </title>
 </head>
 <body>
     <div class="container">
