@@ -34,7 +34,7 @@
 						</a>
 					<?php endif ?>
 
-					<a href="single_post.php?post-slug=<?php echo $post['slug']; ?>">
+					<a href="single_post.php?post=<?php echo $post['id']; ?>">
 						<div class="post_info">
 							<h3><?php echo $post['title'] ?></h3>
 							<div class="info">
