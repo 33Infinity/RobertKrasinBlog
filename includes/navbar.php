@@ -5,6 +5,6 @@
 	<ul>
 	  <li><a class="active" href="index.php">Home</a></li>
 	  <li><a href="topics.php">Topics</a></li>
-	  <li><a href="#about">About</a></li>
+	  <li><a href="about.php">About</a></li>
 	</ul>
 </div>

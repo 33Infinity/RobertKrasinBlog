@@ -71,6 +71,9 @@ form input:focus {
   padding: 13px 20px;
   text-decoration: none;
 }
+.about {
+  font-size: 20px;
+}
 .container {
   width: 80%;
   margin: 0px auto;
