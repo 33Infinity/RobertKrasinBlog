@@ -9,6 +9,7 @@
 <body>
     <div class="container about">
         <?php include( ROOT_PATH . '/includes/navbar.php') ?>
+        <h1 style="text-align:center;">About Rob Krasin</h1>
         <p>Rob Krasin is at once a seeker and dispenser of knowledge (frequently and mostly unsolicited). He grew
 up on the East Coast, has been gone from there for millennia yet still retains a NYC, and more
 specifically, Brooklyn sensibility. He is vitally interested in the world at-large, even though he actively
@@ -35,8 +36,8 @@ comfortable home, existing in an uneasy armistice that periodically erupts into 
 be noted there may be times when said feline will editorialize, but this nonsensical activity, hopefully,
 will be kept to a minimum...
         </p>
-        <img src="static/images/daddy.jpg"></img>
-        <img src="static/images/cat.jpg"></img>
+        <img style="width:49%" src="static/images/daddy.jpg"></img>
+        <img style="width:49%" src="static/images/cat.jpg"></img>
     </div>
 </body>
 <!-- footer -->

@@ -4,7 +4,7 @@ function getPublishedPosts() {
 	try
 	{
 		global $conn;
-		$sql = "SELECT * FROM posts WHERE published=true";
+		$sql = "SELECT * FROM posts WHERE published=true order by created_at";
 		$result = mysqli_query($conn, $sql);
 		$final_posts = array();
 		for($i=0;$i<mysqli_num_rows($result);$i++){
