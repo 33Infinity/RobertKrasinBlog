@@ -58,6 +58,17 @@ form input {
 form input:focus {
   outline: none;
 }
+.fa {
+  padding: 5px;
+  font-size: 15px;
+  text-align: left;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
 /* BUTTON DEFAULT */
 .btn {
   color: white;

@@ -3,7 +3,7 @@
 <?php  include('./includes/registration_login.php'); ?>
 
 <?php include('./includes/head_section.php'); ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Robert Krasin's Blog | Sign up </title>
 </head>
 <body>

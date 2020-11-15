@@ -7,6 +7,7 @@
 <?php $topics = getAllTopics();?>
 <?php require_once( ROOT_PATH . '/includes/head_section.php') ?>
 	<title>Robert Krasin's Blog | Home </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<!-- container - wraps whole page -->

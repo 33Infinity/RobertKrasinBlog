@@ -8,6 +8,7 @@
 		$post = getPost($post_id);
 	}
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title> <?php echo $post['title'] ?> | Robert Krasin's Blog</title>
 </head>
 <body>

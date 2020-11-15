@@ -8,6 +8,7 @@
 		$posts = getPublishedPostsByTopic($topic_id);
 	}
 ?>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Robert Krasin's Blog | Posts </title>
 </head>
 <body>
